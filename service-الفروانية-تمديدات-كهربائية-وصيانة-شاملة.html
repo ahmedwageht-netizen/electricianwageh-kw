@@ -13,6 +13,8 @@
 <meta name="geo.placename" content="الفروانية، الكويت">
 <link rel="canonical" href="service-الفروانية-تمديدات-كهربائية-وصيانة-شاملة.html">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<!-- إضافة FontAwesome للأيقونات الاحترافية وبوزن خفيف -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
@@ -88,8 +90,15 @@ body{font-family:'Cairo',sans-serif;background:#f0f4f8;color:#222;direction:rtl;
 
 /* Trust badges */
 .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:10px;}
-.trust-item{background:#f5f5f5;border-radius:10px;padding:15px;text-align:center;font-size:0.9rem;font-weight:700;color:#333;}
-.trust-item .t-icon{font-size:1.8rem;margin-bottom:5px;}
+.trust-item{background:#f5f5f5;border-radius:10px;padding:15px;text-align:center;font-size:0.95rem;font-weight:700;color:#333;transition:all 0.3s ease;}
+.trust-item:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(13,71,161,0.15);background:#E3F2FD;}
+.trust-item .t-icon{font-size:2rem;margin-bottom:8px;color:#0D47A1;transition:0.3s;}
+.trust-item:hover .t-icon{color:#E65100;transform:scale(1.1);}
+
+/* Background SVG Waves & Blobs */
+.bg-svg{position:absolute;bottom:-2px;left:0;width:100%;height:auto;z-index:1;pointer-events:none;}
+.hero-bg{position:absolute;top:0;right:0;width:150vw;height:150vh;background:radial-gradient(circle at top right,rgba(25,118,210,0.05),transparent 50%);z-index:-1;}
+.icon-glow{filter:drop-shadow(0 0 10px rgba(255,193,7,0.5));}
 
 @media(max-width:580px){
     .sticky-cta a span{display:none;}
@@ -100,26 +109,29 @@ body{font-family:'Cairo',sans-serif;background:#f0f4f8;color:#222;direction:rtl;
 <body>
 
 
-<!-- ====== Header ====== -->
+<!-- ====== Header (With SVG Wave) ====== -->
 <header class="site-header">
-    <div class="header-inner">
-        <h1>⚡ فني كهربائي بالكويت – خبرة 30 سنة</h1>
-        <div class="header-badge">⭐ خدمة موثوقة في جميع مناطق الكويت</div>
+    <div class="header-inner" style="z-index:2;position:relative;">
+        <h1><i class="fa-solid fa-bolt icon-glow"></i> فني كهربائي بالكويت – خبرة 30 سنة</h1>
+        <div class="header-badge"><i class="fa-solid fa-shield-halved"></i> خدمة موثوقة في جميع مناطق الكويت</div>
     </div>
 
     <!-- Sticky Top CTA -->
-    <div class="sticky-cta">
+    <div class="sticky-cta" style="z-index:3;position:relative;">
         <a href="https://wa.me/96596671387" class="sticky-wa">
-            💬 <span>واتساب فوري</span>
+            <i class="fa-brands fa-whatsapp fa-lg"></i> <span>واتساب فوري</span>
         </a>
         <a href="tel:+96596671387" class="sticky-call">
-            📞 <span>اتصل الآن</span>
+            <i class="fa-solid fa-phone-volume fa-lg"></i> <span>اتصل الآن</span>
         </a>
     </div>
+    <!-- SVG Animated Wave -->
+    <svg class="bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path fill="#f0f4f8" fill-opacity="1" d="M0,64L80,64C160,64,320,64,480,74.7C640,85,800,107,960,101.3C1120,96,1280,64,1360,48L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path></svg>
 </header>
 
 <!-- ====== Main ====== -->
-<div class="main-wrap">
+<div class="main-wrap" style="position:relative;">
+    <div class="hero-bg"></div>
 
     <!-- Hero -->
     <div class="hero-card">
@@ -127,37 +139,52 @@ body{font-family:'Cairo',sans-serif;background:#f0f4f8;color:#222;direction:rtl;
         <p>هل تبحث عن أفضل خدمة تمديدات كهربائية وصيانة شاملة في الفروانية؟ نحن الخيار الأمثل بخبرة 30 عاماً.</p>
         <img src="assets/images/electricianwageh-seo-3.png" alt="أفضل فني تمديدات كهربائية وصيانة شاملة في الفروانية" loading="lazy" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin:20px 0; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
         <div class="experience-bar">
-            <div class="exp-item">🏆 30 سنة خبرة</div>
-            <div class="exp-item">📍 الفروانية - الكويت</div>
-            <div class="exp-item">⚡ استجابة سريعة</div>
-            <div class="exp-item">✅ ضمان على العمل</div>
+            <div class="exp-item"><i class="fa-solid fa-medal"></i> 30 سنة خبرة</div>
+            <div class="exp-item"><i class="fa-solid fa-location-dot"></i> الفروانية - الكويت</div>
+            <div class="exp-item"><i class="fa-solid fa-truck-fast"></i> استجابة سريعة</div>
+            <div class="exp-item"><i class="fa-solid fa-file-contract"></i> ضمان على العمل</div>
         </div>
     </div>
 
     <!-- Services List -->
     <div class="section-card">
-        <h3>🔧 خدماتنا الكاملة</h3>
-        <ul class="services-list"><li class="active-service">⭐ تمديدات كهربائية وصيانة شاملة</li><li class="">✅ تركيب وصيانة الإنتركوم</li><li class="">✅ تركيب وصيانة البدالات</li><li class="">✅ تركيب وصيانة كاميرات المراقبة</li><li class="">✅ تركيب وصيانة الستلايت</li><li class="">✅ أنظمة المنزل الذكي Smart Home</li></ul>
+        <h3><i class="fa-solid fa-screwdriver-wrench"></i> خدماتنا الكاملة</h3>
+        <ul class="services-list"><li class="active-service"><i class="fa-solid fa-star"></i> تمديدات كهربائية وصيانة شاملة</li><li class=""><i class="fa-solid fa-check-circle"></i> تركيب وصيانة الإنتركوم</li><li class=""><i class="fa-solid fa-check-circle"></i> تركيب وصيانة البدالات</li><li class=""><i class="fa-solid fa-check-circle"></i> تركيب وصيانة كاميرات المراقبة</li><li class=""><i class="fa-solid fa-check-circle"></i> تركيب وصيانة الستلايت</li><li class=""><i class="fa-solid fa-check-circle"></i> أنظمة المنزل الذكي Smart Home</li></ul>
     </div>
 
     <!-- Service Description -->
     <div class="section-card">
-        <h3>📌 تمديدات كهربائية وصيانة شاملة في الفروانية</h3>
+        <h3><i class="fa-solid fa-bookmark icon-glow"></i> تمديدات كهربائية وصيانة شاملة في الفروانية</h3>
         <p class="desc-text">تمديدات كهربائية جديدة وصيانة شاملة لكل أعمال الكهرباء المنزلية والتجارية في الكويت. نكشف الأعطال ونصلحها بأسرع وقت وأعلى جودة.</p>
         <br>
         <p class="desc-text">✅ نستخدم أحدث الأدوات وأجود المواد الأصلية المعتمدة. عملنا مضمون وأسعارنا مناسبة تناسب الجميع. الخدمة متوفرة في جميع مناطق الكويت من الشمال إلى الجنوب.</p>
     </div>
 
     <!-- Trust / Why Us -->
-    <div class="section-card">
-        <h3>💎 لماذا تختارنا؟</h3>
+    <div class="section-card" style="position:relative; overflow:hidden;">
+        <h3><i class="fa-solid fa-gem"></i> لماذا تختارنا؟</h3>
+        <!-- Decorative SVG Blob -->
+        <svg style="position:absolute; top:-50px; left:-50px; opacity:0.03; width:200px; transform:rotate(-45deg); pointer-events:none;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#0D47A1" d="M47.7,-57.2C59,-46.3,64.6,-28.9,67.6,-11.1C70.6,6.7,71.1,24.8,61.9,37C52.7,49.2,33.8,55.5,15.7,59.3C-2.4,63.1,-19.7,64.4,-34.5,57C-49.3,49.6,-61.6,33.5,-66.2,15.5C-70.8,-2.5,-67.7,-22.4,-57.4,-38C-47,-53.6,-29.4,-64.9,-12,-69C5.4,-73.1,22.8,-70.1,47.7,-57.2Z" transform="translate(100 100)" /></svg>
+        
         <div class="trust-grid">
-            <div class="trust-item"><div class="t-icon">🕐</div>سرعة الحضور</div>
-            <div class="trust-item"><div class="t-icon">🛡️</div>ضمان العمل</div>
-            <div class="trust-item"><div class="t-icon">💰</div>أسعار تنافسية</div>
-            <div class="trust-item"><div class="t-icon">🏆</div>30 سنة خبرة</div>
-            <div class="trust-item"><div class="t-icon">🔧</div>أدوات حديثة</div>
-            <div class="trust-item"><div class="t-icon">📞</div>متاح 24/7</div>
+            <a href="tel:+96596671387" style="text-decoration:none; color:inherit;">
+                <div class="trust-item"><div class="t-icon"><i class="fa-solid fa-stopwatch"></i></div>سرعة الحضور</div>
+            </a>
+            <a href="tel:+96596671387" style="text-decoration:none; color:inherit;">
+                <div class="trust-item"><div class="t-icon"><i class="fa-solid fa-shield-virus"></i></div>ضمان العمل</div>
+            </a>
+            <a href="tel:+96596671387" style="text-decoration:none; color:inherit;">
+                <div class="trust-item"><div class="t-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>أسعار تنافسية</div>
+            </a>
+            <a href="tel:+96596671387" style="text-decoration:none; color:inherit;">
+                <div class="trust-item"><div class="t-icon"><i class="fa-solid fa-award"></i></div>30 سنة خبرة</div>
+            </a>
+            <a href="tel:+96596671387" style="text-decoration:none; color:inherit;">
+                <div class="trust-item"><div class="t-icon"><i class="fa-solid fa-toolbox"></i></div>أدوات حديثة</div>
+            </a>
+            <a href="tel:+96596671387" style="text-decoration:none; color:inherit;">
+                <div class="trust-item"><div class="t-icon"><i class="fa-solid fa-headset"></i></div>متاح 24/7</div>
+            </a>
         </div>
     </div>
 
@@ -176,11 +203,11 @@ body{font-family:'Cairo',sans-serif;background:#f0f4f8;color:#222;direction:rtl;
 <!-- ====== Floating FAB Buttons ====== -->
 <div class="float-cta">
     <a href="https://wa.me/96596671387" class="float-wa">
-        <span class="float-cta-icon">💬</span>
+        <i class="fa-brands fa-whatsapp float-cta-icon"></i>
         واتساب
     </a>
     <a href="tel:+96596671387" class="float-call">
-        <span class="float-cta-icon">📞</span>
+        <i class="fa-solid fa-phone float-cta-icon"></i>
         اتصل الآن
     </a>
 </div>
