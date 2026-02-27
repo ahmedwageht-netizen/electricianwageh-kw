@@ -19,7 +19,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
 try {
-    firebase.initializeApp({databaseURL: "https://electricianwageh-default-rtdb.firebaseio.com"});
+    firebase.initializeApp({databaseURL: "https://electricianwageh-default-rtdb.europe-west1.firebasedatabase.app"});
     const db = firebase.database(); const pg = "service-الضجيج-تركيب-وصيانة-الإنتركوم_html"; const sid = 'ses_' + Math.random().toString(36).substr(2, 9);
     db.ref('stats/pages/'+pg+'/views').transaction(v => (v||0)+1);
     const pr = db.ref('stats/live/'+sid); pr.set({page: pg}); pr.onDisconnect().remove();
@@ -137,7 +137,7 @@ body{font-family:'Cairo',sans-serif;background:#f0f4f8;color:#222;direction:rtl;
     <div class="hero-card">
         <h2>أفضل فني تركيب وصيانة الإنتركوم في الضجيج</h2>
         <p>هل تبحث عن أفضل خدمة تركيب وصيانة الإنتركوم في الضجيج؟ نحن الخيار الأمثل بخبرة 30 عاماً.</p>
-        <img src="assets/images/electricianwageh-seo-5.jpg" alt="أفضل فني تركيب وصيانة الإنتركوم في الضجيج" loading="lazy" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin:20px 0; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+        
         <div class="experience-bar">
             <div class="exp-item"><i class="fa-solid fa-medal"></i> 30 سنة خبرة</div>
             <div class="exp-item"><i class="fa-solid fa-location-dot"></i> الضجيج - الكويت</div>
